@@ -29,9 +29,10 @@ class clustering:
             go.Scatter(
                 x=x,
                 y=y,
-                mode="lines",
-                line=dict(color="cornflowerblue", width=2),
+                mode="lines+markers",
+                line=dict(color="#2600f7", width=2),
                 name="input data",
+            
             )
         )
         if all_knees:
@@ -42,10 +43,10 @@ class clustering:
                     mode="markers",
                     marker=dict(
                         color="orange",
-                        size=12,
+                        size=8,
                         line=dict(width=1, color="DarkSlateGrey"),
                     ),
-                    marker_symbol="circle",
+                    marker_symbol="diamond",
                     name="potential knee",
                 )
             )
@@ -56,13 +57,22 @@ class clustering:
                 mode="markers",
                 marker=dict(
                     color="orangered",
-                    size=16,
+                    size=12,
                     line=dict(width=1, color="DarkSlateGrey"),
                 ),
-                marker_symbol="circle-dot",
+                marker_symbol="x",
                 name="knee point",
             )
         )
+        fig.add_trace(
+            go.Scatter(
+            x=[kl.knee, kl.knee],
+            y=[min(y), max(y)],
+            mode="lines",
+            line=dict(color="green", width=2, dash="dash"),
+            name="knee line"
+        )
+    )
         fig.update_layout(
             title="Knee/Elbow(s) in Your Data",
             title_x=0.5,
@@ -79,8 +89,8 @@ class clustering:
                 ticks="outside",
                 tickfont=dict(
                     family="Arial",
-                    size=18,
-                    color="white",
+                    size=12,
+                    
                 ),
             ),
             yaxis=dict(
@@ -92,8 +102,8 @@ class clustering:
                 ticks="outside",
                 tickfont=dict(
                     family="Arial",
-                    size=18,
-                    color="white",
+                    size=12,
+                    
                 ),
             ),
             showlegend=True,

@@ -6,6 +6,7 @@ class feature_eng:
     def Label(self, df):
         label_encoder = preprocessing.LabelEncoder()
         df = df.dropna() # drop nan values
+        #df.drop(columns = ['Unnamed: 0'])
         for col in df.columns:
             if(df[col].dtype == object):
                 # Encode labels in column 
