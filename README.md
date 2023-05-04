@@ -113,7 +113,7 @@ The aim of developing JENK - RED application is to make our framework accessible
 <hr />
 
 <h2>Cite our work</h2>
-     Sannigrahi M., Bhowmik A., Ganguli R., Sen S. (2023) AutoHealthX: Automated machine learning and Explainable AI-based Cloud functions for Healthcare (Preprint).
+     Sannigrahi M., Bhowmik A., Ganguli R., Sen S. (2023) JENK-RED: Jenks-Natural-Break Reduction for Efficient Dimensionality (Preprint).
 
 <hr />
 
