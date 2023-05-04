@@ -9,7 +9,7 @@ import plotly.express as px
 from feature import feature_matrix
 # Use the full page instead of a narrow central column
 #st.set_page_config(layout="wide")
-st.title(':blue[JENK-]:red[RED]:')
+st.title(':blue[JENK-]:red[RED:]')
 st.subheader('_Jenks-Natural-Break Reduction for Efficient Dimensionality_')
 
 
@@ -33,8 +33,10 @@ if file is not None:
     col1,col2 = st.columns(2)
 
     with col1:
+       st.markdown(f"<h3 style='text-align: left;'><b>{'Numerical Features'}</b></h>", unsafe_allow_html=True)
        st.dataframe(df[X])
     with col2:
+       st.markdown(f"<h3 style='text-align: left;'><b>{'Categorical Features'}</b></h>", unsafe_allow_html=True)
        st.dataframe(df[Y])
 
     data = df[X].to_numpy()
