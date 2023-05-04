@@ -2,7 +2,7 @@
 
  [Madhushree Sannigrahi](https://scholar.google.com/citations?user=Mtnm7igAAAAJ&hl=en), [Abhimanyu Bhowmik](https://scholar.google.com/citations?user=r3bzJ7oAAAAJ&hl=en), [Runa Ganguli](https://scholar.google.com/citations?user=8IwbcvIAAAAJ&hl=en&oi=ao), [Soumya Sen](https://scholar.google.com/citations?hl=en&user=QNqOy8wAAAAJ&view_op=list_works&sortby=pubdate)
 
-[![report](https://img.shields.io/badge/Final-Report-brightgreen)](https://github.com/abhimanyubhowmik/Internship_Repository_RRSC_East-ISRO/blob/main/Reports/Final_Report_RRSC_East.pdf)
+[![report](https://img.shields.io/badge/Final-Report-brightgreen)](https://github.com/Madhushree2000/Jenks-Natural-Break-Clustering/blob/main/JNB_Industrial_Report.pdf)
 [![dataset](https://img.shields.io/badge/Kaggle-Dataset-blue)](https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis) 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://madhushree2000-jenks-natural-break-clustering-appmain-kv2dfk.streamlit.app/)
 
