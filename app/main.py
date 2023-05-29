@@ -90,6 +90,14 @@ if file is not None:
     fig = px.imshow(fm.matrix(X,sj), text_auto=True, color_continuous_scale = 'plasma')
     st.plotly_chart(fig, use_container_width=True)
 
+    #silhoette score list
+    sj = sorted(sj, reverse = True, key=lambda i: i[1])
+
+    if (len(sj) > 5):
+       st.table(data=sj[1:6])
+    else:
+       st.table(data = sj[1:])
+
     #Entropy 
     title_text = 'Categorical Feature Ranking'
     st.markdown(f"<h3 style='text-align: left;'><b>{title_text}</b></h3>", unsafe_allow_html=True)
