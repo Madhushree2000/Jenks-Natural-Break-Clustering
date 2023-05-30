@@ -47,7 +47,7 @@ if file is not None:
     st.markdown(f"<h2 style='text-align: left;'><b>{title_text}</b></h2>", unsafe_allow_html=True)
 
    # KneeLocator parameters
-    k = st.slider("k-value Threshold",min_value = 4, step = 1, max_value = 10)
+    k = st.slider("k-value Threshold",min_value = 5, step = 1, max_value = 11)
     k_val = range(2,k)
     k_val_arr = np.array(k_val)
 
@@ -66,6 +66,7 @@ if file is not None:
     jnb_sil = pd.DataFrame(sj, columns = ['features','JNB silhoette score'])
     fig = px.bar(jnb_sil, x = 'features', y = 'JNB silhoette score', color='JNB silhoette score',color_continuous_scale = 'plasma' )
     st.plotly_chart(fig, use_container_width=True)
+     
 
     #threshold
     S = st.number_input(label = 'Select the percentange of data to be taken into consideration (based on Silhoette Score)', min_value=25, max_value=100, step=5)
@@ -84,25 +85,30 @@ if file is not None:
     sj = clust.allPossibleSubsets(r,df)
 
     #Feature Matrix 
+    
     title_text = 'Feature Matrix'
     st.markdown(f"<h3 style='text-align: left;'><b>{title_text}</b></h3>", unsafe_allow_html=True)
     st.markdown(f"<p> All potential combinations from the chosen attributes are calculated and placed into a feature matrix for easy comparison. This allows us to understand and compare various multi-dimensional features in a single table-like format, through which we can understand the trade-off between the High dimensional features with a low silhouette score and low-dimensional features with a high silhouette score.</p>", unsafe_allow_html=True)   
     fig = px.imshow(fm.matrix(X,sj), text_auto=True, color_continuous_scale = 'plasma')
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig) 
+   
 
     #silhoette score list
     sj = sorted(sj, reverse = True, key=lambda i: i[1])
+    title_text = 'Top performing Attribute sub-sets'
+    st.markdown(f"<h3 style='text-align: left;'><b>{title_text}</b></h3>", unsafe_allow_html=True)
+
+    sj_dataframe = pd.DataFrame(sj, columns = ['Attribute Subset', 'Silhoette Score'] )
 
     if (len(sj) > 5):
-       st.table(data=sj[1:6])
+       st.table(data = sj_dataframe[1:6])
     else:
-       st.table(data = sj[1:])
+       st.table(data = sj_dataframe[1:])
 
     #Entropy 
     title_text = 'Categorical Feature Ranking'
     st.markdown(f"<h3 style='text-align: left;'><b>{title_text}</b></h3>", unsafe_allow_html=True)
     st.markdown(f"<p> Based on entropy, the user can select features that will most likely match their numerical features. As entropy is a measurement of disorders, one can use it to represent similarity by checking entropy between two clusters. If the clusters are similar they will generate less entropy compared to dissimilar clusters.</p>", unsafe_allow_html=True)
-    #st.text('Based on entropy, the user can select features that will most likely match their numerical features. As entropy is a measurement of disorders, one can use it to represent similarity by checking entropy between two clusters. If the clusters are similar they will generate less entropy compared to dissimilar clusters.')
     highest = pp.sort(sj[1:]) 
     options = st.multiselect('Choose the desired features:',X,highest[0])
     result = en.entropy_calculation(options,Y,df)
