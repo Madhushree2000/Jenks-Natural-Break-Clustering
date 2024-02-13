@@ -101,7 +101,7 @@ Based on entropy we have selected features that will most likely match our numer
 
 <h2>JENK-RED: Application UI </h2>
 
-The aim of developing JENK - RED application is to make our framework accessible for normal users who don’t have any technical knowledge. An interactive web application is developed using StreamLit Framework to make it possible. The Application is deployed on StreamLit cloud.
+The aim of developing **JENK - RED** application is to make our framework accessible for normal users who don’t have any technical knowledge. An interactive web application is developed using StreamLit Framework to make it possible. The Application is deployed on StreamLit cloud.
 
 
 
@@ -110,7 +110,26 @@ The aim of developing JENK - RED application is to make our framework accessible
 <p>UI of deployed application using Streamlit</p>
 </div>
 
-<hr />
+<h3>Get Started with the JENK-RED Application?</h3>  
+
+To explore JENK-RED, follow these simple steps:
+
+* **Open the Application:** Click the link provided: [JENK_RED](https://madhushree2000-jenks-natural-break-clustering-appmain-kv2dfk.streamlit.app)
+
+* **Upload Your Dataset:** Select your desired numeric dataset. For convenience, some test datasets are available in the `\Test dataset` folder of the application repository.
+
+Remember, JENK-RED is designed for **numeric** datasets under 200 MB. Ensure your input data aligns with this requirement for optimal results.
+
+* **Set Categorical Feature Threshold:** This threshold determines how attributes are classified as numerical or categorical. Features with fewer unique values than the chosen threshold are considered categorical. Choose a suitable value based on your dataset characteristics.
+
+* **Set K-Value Threshold:** This step checks the most optimal k value for clustering. The k-value threshold is used for testing different number of clusters. By default, it is set to 5.
+
+* **JNB Clustering:** Select the percentange of data to be taken into consideration on its JNB clustering based on Silhoette Score.
+
+All potential combinations from the chosen attributes are calculated and placed into a feature matrix for easy comparison. 
+
+* **Categorical Feature Ranking:** Select the attributes which are important for you. Based on entropy, the user can select features that will most likely match their numerical features.
+ <hr />
 
 <h2>Cite our work</h2>
      Sannigrahi M., Bhowmik A., Ganguli R., Sen S. (2023) JENK-RED: Jenks-Natural-Break Reduction for Efficient Dimensionality (Preprint).
@@ -118,5 +137,4 @@ The aim of developing JENK - RED application is to make our framework accessible
 <hr />
 
 <h2>Contact</h2>
-For any queries, please contact: <a href="mailto:madhushree162000@gmail.com">madhushree162000@gmail.com</a>
-
+For any queries, please contact: <a href="mailto:madhushree162000@gmail.com">madhushree162000@gmail.com</a>.
